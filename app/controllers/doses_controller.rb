@@ -1,22 +1,22 @@
 class DosesController < ApplicationController
-  def index
-  end
-
-  def show
-  end
+  before_action :set_cocktail
 
   def new
+    @dose = Dose.new
   end
 
   def create
+    @cocktail.doses.create(doses_params)
+    redirect_to cocktail_path(@cocktails)
   end
 
-  def edit
+  private
+
+  def set_cocktail
+    @cocktail = Cocktail.find(params[:cocktail_id])
   end
 
-  def update
-  end
-
-  def destroy
+  def doses_params
+    params.require(:dose).permit(:description)
   end
 end
