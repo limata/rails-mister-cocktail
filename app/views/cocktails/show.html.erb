@@ -2,3 +2,19 @@
   <strong>Name:</strong>
   <%= @cocktail.name %>
 </p>
+
+
+<%= link_to "All the Cocktails", cocktails_path %>
+<%= link_to "Edit", edit_cocktail_path(@cocktail) %>
+<%= link_to "Destroy!!!!", cocktail_path(@cocktail), method: :delete, data: {confirm: 'Are you sure?' } %>
+
+
+  <h3>Doses:</h3>
+  <% @cocktail.doses.each do |dose| %>
+      <%= dose.description %>
+  <% end %>
+
+
+<div class="container">
+  <p><%= link_to "Add a new Dose", new_cocktail_dose_path(@cocktail) %></p>
+</div>
