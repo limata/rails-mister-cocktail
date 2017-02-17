@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
   <h3><%= link_to 'Create a new cocktail', new_cocktail_path(@cocktail) %></h3>
-  <h2>List of Cocktails</h2>
+  <h2 class="text-center">List of Cocktails</h2>
     <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-sm-4">
         <% if cocktail.photo? %>
