@@ -19,4 +19,7 @@ Rails.application.routes.draw do
   # - As a user, I want to destroy a cocktail
   # - As a user, I want to update a cocktail
   # - As a user, I want to remove an ingredient from a given cocktail
+
+  mount Attachinary::Engine => "/attachinary"
+
 end
