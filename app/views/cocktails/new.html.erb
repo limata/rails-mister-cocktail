@@ -1,2 +1,12 @@
-New Cocktail
-<%= render 'form', cocktail: @cocktail %> <%= link_to 'Back', cocktails_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <h1>Add a cocktail</h1>
+      <%= simple_form_for(@cocktail) do |f| %>
+        <%= f.input :name %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+      <%= link_to "Home", root_path %>
+    </div>
+  </div>
+</div>
