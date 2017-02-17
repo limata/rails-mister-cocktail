@@ -1,15 +1,23 @@
+ <div class="banner">
+  <div class="banner-content">
+    <h3><%= link_to 'Get Started: Create a new cocktail', new_cocktail_path(@cocktail) %></h3>
+    <p>Or check all available cocktails below</p>
+  </div>
+  </div>
+
 <div class="container">
   <div class="row">
-  <h3><%= link_to 'Create a new cocktail', new_cocktail_path(@cocktail) %></h3>
   <h2 class="text-center">List of Cocktails</h2>
     <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-sm-4">
+      <%= link_to cocktail_path(cocktail) do %>
         <% if cocktail.photo? %>
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
          url('<%= cl_image_path cocktail.photo.path, height: 300, width: 400, crop: :fill %>')">
         <% end %>
-        <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+        <p><%= cocktail.name %></p>
       </div>
+      <% end %>
   </div>
 <% end %>
 </div>
